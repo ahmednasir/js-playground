@@ -1,0 +1,65 @@
+:root {
+    --universalPadding: 1rem;
+}
+
+#searchbar {
+    width: 100%;
+    padding: var(--universalPadding);
+}
+#searchbar input{
+    width: 50%;
+}
+
+#restaurants-row {
+    display: flex;
+    /* flex-direction: row; */
+    flex-wrap: wrap;
+    margin: var(--universalPadding);
+}
+
+.restaurant {
+    border: 1px solid #ccc;
+    width: 12rem;
+    min-height: 15rem;
+    padding: var(--universalPadding);
+    border-radius: 5px;
+    text-align: center;
+    margin-right: var(--universalPadding);
+    margin-bottom: var(--universalPadding);
+}
+
+
+.restaurant .restaurant-image img {
+    height: auto;
+    width: 100%;
+    border-radius: 5px;
+}
+
+/* 
+.restaurant .restaurant-title{
+    text-align: center;
+} */
+
+.restaurant .restaurant-text {
+    margin-top: 1rem;
+}
+
+.restaurant-details {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.restaurant-details p {
+    margin: 0 2px 0 2px;
+}
+
+
+
+
+/* media queries */
+@media (max-width: 768px) {
+    #restaurants-row {
+        flex-direction: column;
+    }
+}
