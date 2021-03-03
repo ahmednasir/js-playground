@@ -2,7 +2,7 @@ const loader = $("#loading");
 const restaurantLayout = $("#restaurants-row");
 const inputBox = document.getElementById("search-box");
 let restaurants = []
-document.querySelector("#search").addEventListener('click',()=>{
+document.querySelector("#search").addEventListener('click', () => {
     searchRestaurant()
 })
 
@@ -38,13 +38,17 @@ const buildList = (restaurants) => {
 
 const searchRestaurant = () => {
     let query = inputBox.value;
-    if(!query) {buildList(restaurants); return;}
+    if (!query) { buildList(restaurants); return; }
 
-    
-    
+
+
     query = query.toLowerCase();
-    let filteredList = restaurants.filter(restaurant =>restaurant.title.toLowerCase().includes(query) || restaurant.description.toLowerCase().includes(query))
-    buildList(filteredList)
+    let filteredList = restaurants.filter(restaurant => restaurant.title.toLowerCase().includes(query) || restaurant.description.toLowerCase().includes(query))
+    if (filteredList.length == 0) {
+        alert('No restaurants found!!')
+    } else {
+        buildList(filteredList)
+    }
 }
 
 const addToFavorite = (restaurant) => {
@@ -52,10 +56,10 @@ const addToFavorite = (restaurant) => {
 }
 
 const toggleLoader = (flag) => {
-    if(flag){
+    if (flag) {
         loader.show();
         restaurantLayout.hide();
-    }else{
+    } else {
         loader.hide();
         restaurantLayout.show();
     }

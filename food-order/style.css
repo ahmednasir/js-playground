@@ -59,7 +59,7 @@
 
 /* media queries */
 @media (max-width: 768px) {
-    #restaurants-row {
+    /* #restaurants-row {
         flex-direction: column;
-    }
+    } */
 }
